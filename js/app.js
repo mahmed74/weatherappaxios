@@ -1,6 +1,10 @@
-let cityName = "karachi";
+// let cityName = "karachi";
 
 const getData = async () => {
+  const cityName = document.getElementById("cityName").value
+    ? document.getElementById("cityName").value
+    : "karachi";
+  document.getElementById("cityName").value = "";
   const res = await axios.get(
     `https://api.openweathermap.org/data/2.5/weather?q=${cityName}&appid=16a70338caa6c105fc746ba16ecf7c7a&units=metric`
   );
